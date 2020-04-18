@@ -5,6 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy": "ng build --deploy-url=https://anthonykuong.github.io/devs-tvshow/",
+    "publish": "ngh",
+    "deploy:test": "ng deploy --base-href=/devs-tvshow/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

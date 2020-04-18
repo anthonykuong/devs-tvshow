@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
-# Deploy tAngular app to Github Pages
+# Deploy Angular app to Github Pages setup
 
 First install the angular-cli-ghpages globally: <br>
 $ npm install -g angular-cli-ghpages: <br>
@@ -10,8 +10,13 @@ Now use the Angular CLI with the --base-href flag to build your project and set 
 $ ng build --prod --base-href "<devs-tvshow>"  : <br>
 Then it’s as simple as running angular-cli-ghpages. You can use the ngh shorthand:: <br>
 $ ngh : <br>
+$ ng deploy --base-href=/devs-tvshow <br>
 And done! Your app will now be hosted at  <br>
 https://anthonykuong.github.io/devs-tvshow/
+
+#Commands to deploy
+npm run deploy <br>
+ngh
 
 ## Development server
 
