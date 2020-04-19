@@ -288,3 +288,23 @@ svg#clouds {
   }
 }
 
+
+.footer {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display:flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  width: 100%;
+  border-top: 1px solid white;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+
+mat-toolbar {
+  background-color: #1976d2;
+}

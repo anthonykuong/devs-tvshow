@@ -6,7 +6,10 @@ import {CharactersComponent} from './cast/characters/characters.component';
 
 
 const routes: Routes = [
-  {path :'summary', component: SynopsisComponent},
+  {path :'summary',
+    loadChildren: () =>
+      import('./summary/summary.module').then(m => m.SummaryModule),
+  },
   {path :'cast', component: CharactersComponent},
   {path :'list', component: ListEpisodesComponent},
   {path :'', redirectTo: '/summary', pathMatch: 'full'},

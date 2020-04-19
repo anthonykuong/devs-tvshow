@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "deploy": "ng build --deploy-url=https://anthonykuong.github.io/devs-tvshow/",
+    "deploy": "ng build --base-href=https://anthonykuong.github.io/devs-tvshow/ ",
     "publish": "ngh",
     "deploy:test": "ng deploy --base-href=/devs-tvshow/",
     "test": "ng test",
