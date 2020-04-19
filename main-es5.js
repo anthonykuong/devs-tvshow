@@ -75,22 +75,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _summary_synopsis_synopsis_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./summary/synopsis/synopsis.component */
-    "./src/app/summary/synopsis/synopsis.component.ts");
-    /* harmony import */
-
-
-    var _cast_characters_characters_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _cast_characters_characters_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./cast/characters/characters.component */
     "./src/app/cast/characters/characters.component.ts");
 
     var routes = [{
       path: 'summary',
-      component: _summary_synopsis_synopsis_component__WEBPACK_IMPORTED_MODULE_3__["SynopsisComponent"]
+      loadChildren: function loadChildren() {
+        return Promise.resolve().then(__webpack_require__.bind(null,
+        /*! ./summary/summary.module */
+        "./src/app/summary/summary.module.ts")).then(function (m) {
+          return m.SummaryModule;
+        });
+      }
     }, {
       path: 'cast',
-      component: _cast_characters_characters_component__WEBPACK_IMPORTED_MODULE_4__["CharactersComponent"]
+      component: _cast_characters_characters_component__WEBPACK_IMPORTED_MODULE_3__["CharactersComponent"]
     }, {
       path: 'list',
       component: _episodes_list_episodes_list_episodes_component__WEBPACK_IMPORTED_MODULE_2__["ListEpisodesComponent"]
@@ -1982,6 +1982,85 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/summary/summary-routing.module.ts":
+  /*!***************************************************!*\
+    !*** ./src/app/summary/summary-routing.module.ts ***!
+    \***************************************************/
+
+  /*! exports provided: SummaryRoutingModule */
+
+  /***/
+  function srcAppSummarySummaryRoutingModuleTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SummaryRoutingModule", function () {
+      return SummaryRoutingModule;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _synopsis_synopsis_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./synopsis/synopsis.component */
+    "./src/app/summary/synopsis/synopsis.component.ts");
+
+    var routes = [{
+      path: '',
+      component: _synopsis_synopsis_component__WEBPACK_IMPORTED_MODULE_2__["SynopsisComponent"]
+    }];
+
+    var SummaryRoutingModule = function SummaryRoutingModule() {
+      _classCallCheck(this, SummaryRoutingModule);
+    };
+
+    SummaryRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+      type: SummaryRoutingModule
+    });
+    SummaryRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+      factory: function SummaryRoutingModule_Factory(t) {
+        return new (t || SummaryRoutingModule)();
+      },
+      imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
+    });
+
+    (function () {
+      (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](SummaryRoutingModule, {
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
+      });
+    })();
+    /*@__PURE__*/
+
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SummaryRoutingModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes)],
+          exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
+        }]
+      }], null, null);
+    })();
+    /***/
+
+  },
+
+  /***/
   "./src/app/summary/summary.module.ts":
   /*!*******************************************!*\
     !*** ./src/app/summary/summary.module.ts ***!
@@ -2018,6 +2097,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _synopsis_synopsis_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ./synopsis/synopsis.component */
     "./src/app/summary/synopsis/synopsis.component.ts");
+    /* harmony import */
+
+
+    var _summary_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./summary-routing.module */
+    "./src/app/summary/summary-routing.module.ts");
 
     var SummaryModule = function SummaryModule() {
       _classCallCheck(this, SummaryModule);
@@ -2030,13 +2115,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       factory: function SummaryModule_Factory(t) {
         return new (t || SummaryModule)();
       },
-      imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]]]
+      imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _summary_routing_module__WEBPACK_IMPORTED_MODULE_3__["SummaryRoutingModule"]]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](SummaryModule, {
         declarations: [_synopsis_synopsis_component__WEBPACK_IMPORTED_MODULE_2__["SynopsisComponent"]],
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]]
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _summary_routing_module__WEBPACK_IMPORTED_MODULE_3__["SummaryRoutingModule"]]
       });
     })();
     /*@__PURE__*/
@@ -2047,7 +2132,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
           declarations: [_synopsis_synopsis_component__WEBPACK_IMPORTED_MODULE_2__["SynopsisComponent"]],
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]]
+          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _summary_routing_module__WEBPACK_IMPORTED_MODULE_3__["SummaryRoutingModule"]]
         }]
       }], null, null);
     })();
@@ -2101,9 +2186,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     SynopsisComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: SynopsisComponent,
       selectors: [["app-synopsis"]],
-      decls: 22,
+      decls: 25,
       vars: 0,
-      consts: [["role", "main", 1, "content"], [1, "card", "highlight-card", "card-small"], ["id", "rocket", "alt", "Rocket Ship", "xmlns", "http://www.w3.org/2000/svg", "width", "101.678", "height", "101.678", "viewBox", "0 0 101.678 101.678"], ["id", "Group_83", "data-name", "Group 83", "transform", "translate(-141 -696)"], ["id", "Ellipse_8", "data-name", "Ellipse 8", "cx", "50.839", "cy", "50.839", "r", "50.839", "transform", "translate(141 696)", "fill", "#dd0031"], ["id", "Group_47", "data-name", "Group 47", "transform", "translate(165.185 720.185)"], ["id", "Path_33", "data-name", "Path 33", "d", "M3.4,42.615a3.084,3.084,0,0,0,3.553,3.553,21.419,21.419,0,0,0,12.215-6.107L9.511,30.4A21.419,21.419,0,0,0,3.4,42.615Z", "transform", "translate(0.371 3.363)", "fill", "#fff"], ["id", "Path_34", "data-name", "Path 34", "d", "M53.3,3.221A3.09,3.09,0,0,0,50.081,0,48.227,48.227,0,0,0,18.322,13.437c-6-1.666-14.991-1.221-18.322,7.218A33.892,33.892,0,0,1,9.439,25.1l-.333.666a3.013,3.013,0,0,0,.555,3.553L23.985,43.641a2.9,2.9,0,0,0,3.553.555l.666-.333A33.892,33.892,0,0,1,32.647,53.3c8.55-3.664,8.884-12.326,7.218-18.322A48.227,48.227,0,0,0,53.3,3.221ZM34.424,9.772a6.439,6.439,0,1,1,9.106,9.106,6.368,6.368,0,0,1-9.106,0A6.467,6.467,0,0,1,34.424,9.772Z", "transform", "translate(0 0.005)", "fill", "#fff"], ["id", "rocket-smoke", "alt", "Rocket Ship Smoke", "xmlns", "http://www.w3.org/2000/svg", "width", "516.119", "height", "1083.632", "viewBox", "0 0 516.119 1083.632"], ["id", "Path_40", "data-name", "Path 40", "d", "M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z", "transform", "translate(-147.025 -140.939)", "fill", "#f5f5f5"], ["alt", "", "src", "https://d1qxviojg2h5lt.cloudfront.net/images/01E21RV0QK7G2SXAMHD7VP5C5Z/devs400.png"]],
+      consts: [["role", "main", 1, "content"], [1, "card", "highlight-card", "card-small"], ["id", "rocket", "alt", "Rocket Ship", "xmlns", "http://www.w3.org/2000/svg", "width", "101.678", "height", "101.678", "viewBox", "0 0 101.678 101.678"], ["id", "Group_83", "data-name", "Group 83", "transform", "translate(-141 -696)"], ["id", "Ellipse_8", "data-name", "Ellipse 8", "cx", "50.839", "cy", "50.839", "r", "50.839", "transform", "translate(141 696)", "fill", "#dd0031"], ["id", "Group_47", "data-name", "Group 47", "transform", "translate(165.185 720.185)"], ["id", "Path_33", "data-name", "Path 33", "d", "M3.4,42.615a3.084,3.084,0,0,0,3.553,3.553,21.419,21.419,0,0,0,12.215-6.107L9.511,30.4A21.419,21.419,0,0,0,3.4,42.615Z", "transform", "translate(0.371 3.363)", "fill", "#fff"], ["id", "Path_34", "data-name", "Path 34", "d", "M53.3,3.221A3.09,3.09,0,0,0,50.081,0,48.227,48.227,0,0,0,18.322,13.437c-6-1.666-14.991-1.221-18.322,7.218A33.892,33.892,0,0,1,9.439,25.1l-.333.666a3.013,3.013,0,0,0,.555,3.553L23.985,43.641a2.9,2.9,0,0,0,3.553.555l.666-.333A33.892,33.892,0,0,1,32.647,53.3c8.55-3.664,8.884-12.326,7.218-18.322A48.227,48.227,0,0,0,53.3,3.221ZM34.424,9.772a6.439,6.439,0,1,1,9.106,9.106,6.368,6.368,0,0,1-9.106,0A6.467,6.467,0,0,1,34.424,9.772Z", "transform", "translate(0 0.005)", "fill", "#fff"], ["id", "rocket-smoke", "alt", "Rocket Ship Smoke", "xmlns", "http://www.w3.org/2000/svg", "width", "516.119", "height", "1083.632", "viewBox", "0 0 516.119 1083.632"], ["id", "Path_40", "data-name", "Path 40", "d", "M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z", "transform", "translate(-147.025 -140.939)", "fill", "#f5f5f5"], ["alt", "", "src", "https://d1qxviojg2h5lt.cloudfront.net/images/01E21RV0QK7G2SXAMHD7VP5C5Z/devs400.png"], ["href", "https://anthonykuong.github.io/devs-tvshow/"]],
       template: function SynopsisComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -2152,29 +2237,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "img", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "h2");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, " Bookmark this site ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Summary");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "a", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Devs is centered on Lily Chan (Sonoya Mizuno), a computer engineer investigating a quantum computing company called Amaya, run by Forest (Nick Offerman), who investigates the company's murder of her boyfriend.The series explores themes related to free will and determinism, as well as Silicon Valley culture. It received generally positive reviews, with critics praising its imagination, acting, soundtrack. That said, critics were somewhat polarized about its relaxed pac");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "https://anthonykuong.github.io/devs-tvshow/");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "h2");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "h2");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "More Details");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Summary");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "p");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "p");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, " On March 13, 2018, it was announced that FX had given the production a pilot order. The pilot was written by Alex Garland who also directed and executive produced the episode as well. On July 23, 2018, Rob Hardy mentioned in an interview that he would serve as the cinematographer for the series On August 3, 2018, it was announced during the Television Critics Association's annual summer press tour that FX had decided o bypass the pilot process and instead were giving the production a straight-to-series order consisting of eight episodes. Additional executive producers include Andrew Macdonald, Allon Reich, Eli Bush, and Scott Rudin. Garland appeared at the New York Comic Con and explained his reasoning behind the creation of the series: \"I read more about science than anything else, and it started with two things. One was getting my head around this principle of determinism, which basically says that everything that happens in the world is based on cause and effect... That has all sorts of implications for us. One is that it takes away free will, but the other is that if you are at a computer powerful enough, you could use determinism to predict the future and understand the past. If you unravel everything about you, about the specifics of you why you prefer a cup of coffee to tea... then five seconds before you said you'd like to have a cup of coffee one would be able to predict you'd ask for it.\" In November 2019, it was announced the show would premiere on Hulu instead of FX, as part of \"FX on Hulu\".On January 9, 2020, it was announced that the series would premiere on March 5, 2020.");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Devs is centered on Lily Chan (Sonoya Mizuno), a computer engineer investigating a quantum computing company called Amaya, run by Forest (Nick Offerman), who investigates the company's murder of her boyfriend.The series explores themes related to free will and determinism, as well as Silicon Valley culture. It received generally positive reviews, with critics praising its imagination, acting, soundtrack. That said, critics were somewhat polarized about its relaxed pac");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "h2");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "More Details");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, " On March 13, 2018, it was announced that FX had given the production a pilot order. The pilot was written by Alex Garland who also directed and executive produced the episode as well. On July 23, 2018, Rob Hardy mentioned in an interview that he would serve as the cinematographer for the series On August 3, 2018, it was announced during the Television Critics Association's annual summer press tour that FX had decided o bypass the pilot process and instead were giving the production a straight-to-series order consisting of eight episodes. Additional executive producers include Andrew Macdonald, Allon Reich, Eli Bush, and Scott Rudin. Garland appeared at the New York Comic Con and explained his reasoning behind the creation of the series: \"I read more about science than anything else, and it started with two things. One was getting my head around this principle of determinism, which basically says that everything that happens in the world is based on cause and effect... That has all sorts of implications for us. One is that it takes away free will, but the other is that if you are at a computer powerful enough, you could use determinism to predict the future and understand the past. If you unravel everything about you, about the specifics of you why you prefer a cup of coffee to tea... then five seconds before you said you'd like to have a cup of coffee one would be able to predict you'd ask for it.\" In November 2019, it was announced the show would premiere on Hulu instead of FX, as part of \"FX on Hulu\".On January 9, 2020, it was announced that the series would premiere on March 5, 2020.");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
