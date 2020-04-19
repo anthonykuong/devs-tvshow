@@ -8,7 +8,7 @@ import {CharactersComponent} from './cast/characters/characters.component';
 const routes: Routes = [
   {path :'summary', component: SynopsisComponent},
   {path :'cast', component: CharactersComponent},
-  {path :'klist', component: ListEpisodesComponent},
+  {path :'list', component: ListEpisodesComponent},
   {path :'', redirectTo: '/summary', pathMatch: 'full'},
 ];
 

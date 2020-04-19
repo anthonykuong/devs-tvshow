@@ -150,12 +150,12 @@ svg#rocket-smoke {
 a,
 a:visited,
 a:hover {
-  color: white;
+  color: #1976d2;
   text-decoration: none;
 }
 
 a:hover {
-  color: white;
+  color: #125699;
 }
 
 .terminal {
