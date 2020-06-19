@@ -49,3 +49,4 @@ Arhitecture notes - https://medium.com/@cyrilletuzi/architecture-in-angular-proj
 
 # Feature List
 feature1 - TODO 1
+feature2 
