@@ -46,3 +46,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## References
 
 Arhitecture notes - https://medium.com/@cyrilletuzi/architecture-in-angular-projects-242606567e40
+
+# Feature List
+feature1 - TODO 1
